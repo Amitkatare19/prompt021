@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #00c3ff;
+    --secondary-color: #ff00aa;
+    --background-color: #000000;
+    --text-color: #ffffff;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(45deg, #000000, #1a1a1a);
+    line-height: 1.6;
+    overflow: hidden;
+    height: 100vh;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+header {
+    text-align: center;
+}
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+.tagline {
+    font-size: 1em;
+    color: #a0a0a0;
+    margin-bottom: 10px;
+}
+#countdown {
+    font-size: 1.2em;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+.main-content {
+    margin-top: 50px;
+    margin-left: 200px;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-around;
+    gap: 200px;
+    align-items: center;
+    height: 60%;
+}
+.hero-image {
+    flex: 1;
+    max-width: 40%;
+    animation: floatAnimation 3s ease-in-out infinite;
+}
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,195,255,0.3);
+}
+.features {
+    flex: 1;
+    padding: 0 20px;
+}
+.feature {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.feature i {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+.feature-content h3 {
+    font-size: 1em;
+    margin-bottom: 2px;
+    color: var(--secondary-color);
+}
+.feature-content p {
+    font-size: 0.8em;
+    margin: 0;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    .hero-image, .features {
+        max-width: 100%;
+    }
+    .models {
+        flex-direction: column;
+    }
+    .model {
+        margin-bottom: 10px;
+    }
+}
